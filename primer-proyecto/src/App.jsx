@@ -4,15 +4,19 @@ import Sidebar from './componentes/Sidebar';
 import PiePagina from './componentes/PiePagina';
 import Presentacion from './componentes/Presentacion';
 import Tarjeta from './componentes/Tarjeta';
+import { tecnologias } from './data/tecnologias';
 import fotoPerfil from './img/images.jpg';
+import Inicio from './pages/Inicio';
+import Perfil from './pages/perfil';
+import { Route, Routes } from 'react-router';
 
 
 function App() {
   const programa = 'Análisis y Desarrollo de Software';
   const usuario = {
-  nombre: 'Andrea Garzón Astudillo',
+  nombre: 'Carlos Alexander Cuaspud Leon',
   rol: 'Aprendiz ADSO',
-  correo: 'garzonastudillo2006.15@gmail.com',
+  correo: 'cuaspud04@gmail.com',
   foto: fotoPerfil,
 }
   return (
@@ -21,34 +25,10 @@ function App() {
       <Encabezado usuario={usuario} />
       <Sidebar />
       <main className="contenido">
-        <h2>Bienvenido al programa {programa}</h2>
-        <section className="tarjetas">
-          <Presentacion 
-          nombre="Andrea Garzón Astudillo"
-          barrio="Cajete"
-          correo="garzonastudillo2006.15@gmail.com"
-          telefono="+573146779758"/>
-          <Tarjeta
-          icono ="🌷" 
-          titulo =" React"
-          descripcion =" Herramienta de Javascript para construir interface con componentes"
-          horas = {120}
-          destacada={ true}/>
-
-          <Tarjeta 
-          icono ="🏈" 
-          titulo ="Vite"
-          descripcion =" Herramienta que crea, ejecuta y empaqueta el proyecto"
-          horas = {60}
-          destacada={false }/>
-
-          <Tarjeta
-          icono ="😶‍🌫️" 
-          titulo ="ESLint"
-          descripcion ="Herramienta que crea , ejecuta y empaqueta el proyecto"
-          horas = {20}
-          destacada={ true} />
-        </section>
+        <Routes>
+          <Route path="/" element={<Inicio/>} />
+          <Route path="/perfil" element={<Perfil/>} />
+        </Routes>
       </main>
       <PiePagina />
     </div>

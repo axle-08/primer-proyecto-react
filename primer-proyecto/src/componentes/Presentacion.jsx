@@ -1,11 +1,11 @@
-function Presentacion({ nombre, barrio, correo, telefono }) {     
+function Presentacion({ nombre, ciudad, anioNacimiento, meta }) {
     return (         
         <article className="presentacion">             
             <h2>Presentación</h2>             
-            <p className="presentacion-nombre">{nombre}</p>                          
-            <p><strong>Barrio:</strong> {barrio}</p>             
-            <p><strong>Correo:</strong> <a href={`mailto:${correo}`}>{correo}</a></p>             
-            <p><strong>Teléfono:</strong> <a>{telefono}</a></p>         
+            <p className="presentacion-nombre">{nombre}</p>
+            <p><strong>Ciudad:</strong> {ciudad}</p>
+            <p><strong>Año de nacimiento:</strong> {anioNacimiento}</p>
+            <p><strong>Meta:</strong> {meta}</p>
         </article>     
     ); 
 }  
